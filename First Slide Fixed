@@ -1,0 +1,249 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+<style>
+.syndicate-slide-embed,
+.syndicate-slide-embed *,
+.syndicate-slide-embed *::before,
+.syndicate-slide-embed *::after {
+  box-sizing: border-box;
+}
+
+.syndicate-slide-embed {
+  --gold: #b8922a;
+  --gold-dk: #8a6b1a;
+  --dark: #1c1a16;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+}
+
+/* SCALE */
+.syndicate-slide-embed .scale-wrap {
+  width: 1920px;
+  transform-origin: top left;
+}
+
+/* MAIN */
+.syndicate-slide-embed .slide-a {
+  width: 1920px;
+  height: 800px;
+  display: flex;
+  position: relative;
+  background: #f5f1ea;
+}
+
+/* BG */
+.syndicate-slide-embed .slide-a__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 60% 50%, #f8f5ee 0%, #f0ece3 100%);
+}
+
+/* RULES */
+.syndicate-slide-embed .slide-a__rule-top,
+.syndicate-slide-embed .slide-a__rule-bottom {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(139,107,26,0.25) 20%, rgba(139,107,26,0.25) 80%, transparent);
+}
+.syndicate-slide-embed .slide-a__rule-top { top: 55px; }
+.syndicate-slide-embed .slide-a__rule-bottom { bottom: 55px; }
+
+/* TEXT */
+.syndicate-slide-embed .slide-a__text {
+  width: 420px;
+  padding-left: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.syndicate-slide-embed .slide-a__eyebrow,
+.syndicate-slide-embed .slide-a__headline,
+.syndicate-slide-embed .slide-a__sub,
+.syndicate-slide-embed .slide-a__cta {
+  opacity: 1;
+}
+
+/* TYPOGRAPHY */
+.syndicate-slide-embed .slide-a__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+  margin-bottom: 24px;
+}
+
+.syndicate-slide-embed .slide-a__headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px;
+  margin-bottom: 24px;
+}
+
+.syndicate-slide-embed .slide-a__headline em {
+  color: var(--gold);
+}
+
+.syndicate-slide-embed .slide-a__sub {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 42px;
+  color: rgba(0,0,0,0.5);
+}
+
+.syndicate-slide-embed .slide-a__cta {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dk);
+  text-decoration: none;
+}
+
+/* PRODUCTS */
+.syndicate-slide-embed .slide-a__products {
+  flex: 1;
+  display: flex;
+  padding: 70px 80px 70px 40px;
+}
+
+.syndicate-slide-embed .prod-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-left: 1px solid rgba(139,107,26,0.15);
+}
+
+.syndicate-slide-embed .prod-col__img {
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.syndicate-slide-embed .prod-col__meta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.syndicate-slide-embed .prod-col__year {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  color: var(--gold-dk);
+}
+
+.syndicate-slide-embed .prod-col__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ANIMATION */
+.syndicate-slide-embed.play-animation .slide-a__eyebrow { animation: fadeUp .6s .1s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .slide-a__headline { animation: fadeUp .7s .2s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .slide-a__sub { animation: fadeUp .7s .3s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .slide-a__cta { animation: fadeUp .7s .4s forwards; opacity:0;}
+
+.syndicate-slide-embed.play-animation .prod-col:nth-child(1) { animation: fadeUp .6s .5s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .prod-col:nth-child(2) { animation: fadeUp .6s .6s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .prod-col:nth-child(3) { animation: fadeUp .6s .7s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .prod-col:nth-child(4) { animation: fadeUp .6s .8s forwards; opacity:0;}
+.syndicate-slide-embed.play-animation .prod-col:nth-child(5) { animation: fadeUp .6s .9s forwards; opacity:0;}
+
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+</style>
+
+<div class="syndicate-slide-embed" id="syndicateSlideEmbed">
+
+  <div class="scale-wrap" id="scaleWrap">
+    <div class="slide-a">
+
+      <div class="slide-a__bg"></div>
+      <div class="slide-a__rule-top"></div>
+      <div class="slide-a__rule-bottom"></div>
+
+      <div class="slide-a__text">
+        <p class="slide-a__eyebrow">80 Years · Established 1946</p>
+        <h2 class="slide-a__headline">The Products<br>Behind the<br><em>Legacy.</em></h2>
+        <p class="slide-a__sub">Eight decades of changing<br>the way the world<br>does flowers.</p>
+        <a href="#" class="slide-a__cta">Shop the Collection →</a>
+      </div>
+
+      <div class="slide-a__products">
+
+        <div class="prod-col">
+          <img class="prod-col__img" src="https://assets.syndicatesales.com/image/934860271560/image_t4ouncu6pt0n39hlum8tg9lm2n/-fnpg-S430x430" alt="Aquapic">
+          <div class="prod-col__meta">
+            <div class="prod-col__year">1946</div>
+            <div class="prod-col__name">Aquapic</div>
+          </div>
+        </div>
+
+        <div class="prod-col">
+          <img class="prod-col__img" src="https://assets.syndicatesales.com/image/934860271560/image_v2qgrcfsfd7ln75bvqq14fvr5k/-fnpg-S430x430" alt="Design Bowl">
+          <div class="prod-col__meta">
+            <div class="prod-col__year">1954</div>
+            <div class="prod-col__name">Design Bowl</div>
+          </div>
+        </div>
+
+        <div class="prod-col">
+          <img class="prod-col__img" src="https://assets.syndicatesales.com/image/934860271560/image_bocgh51qbl64ddehk50l6j806v/-fnpg-S430x430" alt="Everlastin Basket">
+          <div class="prod-col__meta">
+            <div class="prod-col__year">1959</div>
+            <div class="prod-col__name">Everlastin' Basket</div>
+          </div>
+        </div>
+
+        <div class="prod-col">
+          <img class="prod-col__img" src="https://assets.syndicatesales.com/image/934860271560/image_m32lv7gavt6jd0iqmruanu8o4d/-fnpg-S430x430" alt="Classic Rose Vase">
+          <div class="prod-col__meta">
+            <div class="prod-col__year">Since 1946</div>
+            <div class="prod-col__name">Classic Rose Vase</div>
+          </div>
+        </div>
+
+        <div class="prod-col">
+          <img class="prod-col__img" src="https://assets.syndicatesales.com/image/934860271560/image_al5tgch3eh5qd72fi228bb2952/-fnpg-S430x430" alt="Foam Free Mechanic">
+          <div class="prod-col__meta">
+            <div class="prod-col__year">2017</div>
+            <div class="prod-col__name">Foam Free Mechanic</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var embed = document.getElementById('syndicateSlideEmbed');
+  var wrap = document.getElementById('scaleWrap');
+
+  function scale(){
+    if(!embed || !wrap) return;
+    var w = embed.clientWidth;
+    var s = Math.min(1, w / 1920);
+    wrap.style.transform = 'scale('+s+')';
+    wrap.style.height = (800 * s) + 'px';
+  }
+
+  function animate(){
+    embed.classList.add('play-animation');
+  }
+
+  scale();
+  animate();
+
+  window.addEventListener('resize', scale);
+})();
+</script>
